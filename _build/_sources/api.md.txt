@@ -1,8 +1,6 @@
 # API Reference
 
-## example
-
 ```{eval-rst}
-.. automodule:: example
+.. automodule:: gesund
    :members:
 ```
