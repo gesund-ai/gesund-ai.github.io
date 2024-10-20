@@ -1,0 +1,362 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation Metrics Library &mdash; Gesundai 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gesundai
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../validation_metrics.html">Validation Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform_integrations.html">Platform Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gesundai</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Validation Metrics Library</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/code/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="validation-metrics-library">
+<h1>Validation Metrics Library<a class="headerlink" href="#validation-metrics-library" title="Link to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
+<p>This library provides tools for calculating validation metrics for predictions and annotations in machine learning workflows. It includes a command-line tool for computing and displaying validation metrics.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<p>To use this library, ensure you have the necessary dependencies installed in your environment. You can install them via <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<section id="command-line-tool">
+<h3>Command-Line Tool<a class="headerlink" href="#command-line-tool" title="Link to this heading"></a></h3>
+<p>The primary script for running validation metrics is <code class="docutils literal notranslate"><span class="pre">run_metrics.py</span></code>. This script calculates validation metrics based on JSON files containing predictions and annotations.</p>
+<section id="arguments">
+<h4>Arguments<a class="headerlink" href="#arguments" title="Link to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">annotations</span></code> (required): Path to the JSON file containing annotation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predictions</span></code> (required): Path to the JSON file containing prediction data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class_mappings</span></code> (required): Path to the JSON file containing class_mappings data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">problem_type</span></code> (required): Problem type that Validation is being run for .e.g. <code class="docutils literal notranslate"><span class="pre">classification</span></code>, <code class="docutils literal notranslate"><span class="pre">semantic_segmentation</span></code>, <code class="docutils literal notranslate"><span class="pre">instance_segmentation</span></code>, <code class="docutils literal notranslate"><span class="pre">object_detection</span></code></p></li>
+</ul>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Link to this heading"></a></h4>
+<p><strong>Basic Usage</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>run_metrics<span class="w"> </span>--annotations<span class="w"> </span>test_data/gesund_custom_format/gesund_custom_format_annotations_classification.json<span class="w"> </span>--predictions<span class="w"> </span>test_data/gesund_custom_format/gesund_custom_format_predictions_classification.json<span class="w"> </span>--class_mappings<span class="w"> </span>test_data/test_class_mappings.json<span class="w"> </span>--problem_type<span class="w"> </span>classification<span class="w"> </span>--format<span class="w"> </span>gesund_custom_format
+</pre></div>
+</div>
+</section>
+</section>
+<section id="example-json-inputs">
+<h3>Example JSON Inputs<a class="headerlink" href="#example-json-inputs" title="Link to this heading"></a></h3>
+<p>The library supports annotations and predictions in the following formats:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">COCO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YOLO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gesund</span> <span class="pre">Custom</span> <span class="pre">Format</span></code></p></li>
+</ul>
+<p>The format for <code class="docutils literal notranslate"><span class="pre">Gesund</span> <span class="pre">Custom</span> <span class="pre">Format</span></code> is shown below under <code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">JSON</span> <span class="pre">Inputs</span></code>.</p>
+<ul>
+<li><p><strong>Annotations (<code class="docutils literal notranslate"><span class="pre">test_data/gesund_custom_format/gesund_custom_format_annotations_classification.json</span></code>)</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;annotation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664dfb2085d8059c72b7b24a&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">},</span>
+
+<span class="nt">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;annotation&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">      </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664dfb2085d8059c72b7b24d&quot;</span><span class="p">,</span>
+<span class="w">      </span><span class="nt">&quot;label&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">  </span><span class="p">]</span>
+<span class="p">},</span>
+<span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Predictions (<code class="docutils literal notranslate"><span class="pre">test_data/gesund_custom_format/gesund_custom_format_predictions_classification.json</span></code>)</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="nt">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;prediction_class&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.731047693767988</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;logits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="mf">0.2689523062320121</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">0.731047693767988</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;loss&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">16.11764907836914</span>
+<span class="p">},</span>
+
+<span class="nt">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;prediction_class&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;confidence&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7308736572776326</span><span class="p">,</span>
+<span class="w">  </span><span class="nt">&quot;logits&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">    </span><span class="mf">0.26912634272236735</span><span class="p">,</span>
+<span class="w">    </span><span class="mf">0.7308736572776326</span>
+<span class="w">  </span><span class="p">],</span>
+<span class="w">  </span><span class="nt">&quot;loss&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.007578411139547825</span>
+<span class="p">},</span>
+<span class="err">...</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</li>
+<li><p><strong>Class Mappings (<code class="docutils literal notranslate"><span class="pre">test_data/test_class_mappings.json</span></code>)</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pneumonia&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="example-outputs">
+<h3>Example Outputs<a class="headerlink" href="#example-outputs" title="Link to this heading"></a></h3>
+<section id="console-output">
+<h4>Console Output<a class="headerlink" href="#console-output" title="Link to this heading"></a></h4>
+<p>Only the Highlighted Overall Metrics are printed to the console. The output on the consol should look like so:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="w"> </span><span class="err">Me</span><span class="kc">tr</span><span class="err">ics</span><span class="p">:</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Accuracy</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4375</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2656</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.6094</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Micro</span><span class="w"> </span><span class="err">F</span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4375</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2656</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.6094</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Macro</span><span class="w"> </span><span class="err">F</span><span class="mi">1</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4000</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2303</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.5697</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">AUC</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.3996</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2299</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.5693</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Precisio</span><span class="kc">n</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4343</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2625</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.6060</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Se</span><span class="kc">ns</span><span class="err">i</span><span class="kc">t</span><span class="err">ivi</span><span class="kc">t</span><span class="err">y</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4549</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2824</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.6274</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Speci</span><span class="kc">f</span><span class="err">ici</span><span class="kc">t</span><span class="err">y</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">0.4549</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.2824</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.6274</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">Ma</span><span class="kc">tt</span><span class="err">hews</span><span class="w"> </span><span class="err">C</span><span class="w"> </span><span class="err">C</span><span class="p">:</span>
+<span class="w">    </span><span class="err">Valida</span><span class="kc">t</span><span class="err">io</span><span class="kc">n</span><span class="p">:</span><span class="w"> </span><span class="mf">-0.1089</span>
+<span class="w">    </span><span class="err">Co</span><span class="kc">nf</span><span class="err">ide</span><span class="kc">n</span><span class="err">ce_I</span><span class="kc">nter</span><span class="err">val</span><span class="p">:</span><span class="w"> </span><span class="mf">0.0010</span><span class="w"> </span><span class="kc">t</span><span class="err">o</span><span class="w"> </span><span class="mf">0.2168</span>
+<span class="mi">----------------------------------------</span>
+<span class="mi">----------------------------------------</span>
+<span class="err">All</span><span class="w"> </span><span class="err">Graphs</span><span class="w"> </span><span class="err">a</span><span class="kc">n</span><span class="err">d</span><span class="w"> </span><span class="err">Plo</span><span class="kc">ts</span><span class="w"> </span><span class="err">Me</span><span class="kc">tr</span><span class="err">ics</span><span class="w"> </span><span class="err">saved</span><span class="w"> </span><span class="err">i</span><span class="kc">n</span><span class="w"> </span><span class="err">JSONs.</span>
+<span class="mi">----------------------------------------</span>
+</pre></div>
+</div>
+</section>
+<section id="output-json-files">
+<h4>Output JSON Files<a class="headerlink" href="#output-json-files" title="Link to this heading"></a></h4>
+<p>All output JSON files for all graphs and plots will be present in the <code class="docutils literal notranslate"><span class="pre">outputs</span></code> dir, under the randomly assigned <code class="docutils literal notranslate"><span class="pre">{batch_job_id}</span></code> dir.</p>
+</section>
+<section id="coco-format">
+<h4>COCO Format<a class="headerlink" href="#coco-format" title="Link to this heading"></a></h4>
+<p>It is to be noted that COCO format is traditionally used for object detection, instance segmentation, and keypoint detection, but it is not designed for image classification. Therefore, we have adapted COCO-like structures for classification tasks.</p>
+<p>Sample format can be seen below:</p>
+<ul class="simple">
+<li><p><strong>Annotations (<code class="docutils literal notranslate"><span class="pre">test_data/coco/coco_annotations_classification.json</span></code>)</strong>:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;info&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{},</span>
+<span class="w">    </span><span class="nt">&quot;licenses&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">    </span><span class="nt">&quot;categories&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;supercategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medical conditions&quot;</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pneumonia&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;supercategory&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;medical conditions&quot;</span>
+<span class="w">        </span><span class="p">}</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;images&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image_1.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image_2.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789014&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;file_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;image_3.jpg&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;width&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;height&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">240</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="err">...</span>
+<span class="w">    </span><span class="p">],</span>
+<span class="w">    </span><span class="nt">&quot;annotations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;iscrowd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;iscrowd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789014&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;bbox&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span>
+<span class="w">            </span><span class="nt">&quot;area&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">224</span><span class="p">,</span>
+<span class="w">            </span><span class="nt">&quot;iscrowd&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">        </span><span class="err">...</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="w">  </span><span class="p">}</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predictions (<code class="docutils literal notranslate"><span class="pre">test_data/coco_predictions_classification.json</span></code>)</strong>:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789013&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.731047693767988</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;loss&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">16.11764907836914</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789015&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7308736572776326</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;loss&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.007578411139547825</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;image_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;664df1bf782d9eb107789014&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;category_id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;score&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.7310579660592649</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;loss&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">0.000025339495550724678</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="err">...</span>
+<span class="w">      </span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Gesundai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
