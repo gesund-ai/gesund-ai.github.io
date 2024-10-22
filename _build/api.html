@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -13,9 +13,9 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=2709fde1"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -46,7 +46,11 @@
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">User Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="validation_metrics.html">Validation Metrics</a></li>
 <li class="toctree-l1"><a class="reference internal" href="platform_integrations.html">Platform Integrations</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.validation.plotting_metrics"><code class="docutils literal notranslate"><span class="pre">plotting_metrics()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.validation.run_metrics"><code class="docutils literal notranslate"><span class="pre">run_metrics()</span></code></a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -73,8 +77,70 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h1>
+  <section id="module-gesund.validation">
+<span id="api-reference"></span><h1>API Reference<a class="headerlink" href="#module-gesund.validation" title="Permalink to this heading"></a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="gesund.validation.plotting_metrics">
+<span class="sig-prename descclassname"><span class="pre">gesund.validation.</span></span><span class="sig-name descname"><span class="pre">plotting_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filtering_meta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.validation.plotting_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Plot the validation metrics using the stored validation instance.</p>
+<p>This function generates plots for the validation metrics based on the provided metrics data. 
+It can optionally apply metadata filtering to create filtered plots. The results are saved to 
+output directories based on the batch job ID.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metrics</strong> – A dictionary containing the validation metrics and related data, typically generated
+by the <cite>run_metrics</cite> function. It should include keys like ‘problem_type’, ‘batch_job_id’,
+‘successful_batch_data’, and ‘output_dir’.</p></li>
+<li><p><strong>filtering_meta</strong> – <dl class="simple">
+<dt>(optional) A dictionary of filtering criteria for applying metadata filtering</dt><dd><p>to the validation plots. It may contain:</p>
+</dd>
+</dl>
+<ul>
+<li><p>’metadata_file’ (str): Path to the metadata file used for filtering.</p></li>
+<li><p>’filter_meta’ (dict): Specific metadata filters to apply.</p></li>
+</ul>
+</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None. The function generates and saves plot images and JSON files with plot data.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gesund.validation.run_metrics">
+<span class="sig-prename descclassname"><span class="pre">gesund.validation.</span></span><span class="sig-name descname"><span class="pre">run_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">args</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.validation.run_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Run validation metrics based on the passed arguments.</p>
+<p>This function processes prediction data, annotation data, and class mappings to calculate validation metrics.
+It supports multiple formats such as ‘coco’, ‘yolo’, and ‘gesund_custom_format’. The results are optionally 
+saved as JSON files if specified in the arguments.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>args</strong> – A dictionary of arguments containing the following keys:
+- ‘annotations_json_path’ (str): Path to the JSON file containing the annotations.
+- ‘predictions’ (str): Path to the JSON file containing the predictions.
+- ‘class_mappings’ (str): Path to the JSON file containing class mappings.
+- ‘problem_type’ (str): Type of problem (e.g., ‘classification’, ‘object_detection’).
+- ‘format’ (str): Data format for the validation (e.g., ‘coco’, ‘yolo’, ‘gesund_custom_format’).
+- ‘metadata’ (str, optional): Path to the metadata file (if available).
+- ‘write_results_to_json’ (bool, optional): Whether to save the resulting metrics as JSON files.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A dictionary containing the validation metrics and additional information such as:
+- ‘problem_type’ (str): The type of problem.
+- ‘batch_job_id’ (str): A unique identifier for the batch job.
+- ‘successful_batch_data’ (dict): The processed predictions data.
+- ‘annotation_data’ (dict): The processed annotations data.
+- ‘meta_data’ (dict or None): Metadata if provided.
+- ‘class_mappings’ (dict): Class mappings used in the validation.
+- ‘format’ (str): Data format used in the validation.
+- ‘output_dir’ (str): Directory where output files are saved.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 
 

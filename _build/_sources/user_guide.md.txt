@@ -1,11 +1,11 @@
 # User Guide
 
-`gesundai-sdk` is python package that enables you to connect with [Gesund.ai](https://gesund.ai/) and utilize majority of the features and capabilities that you as a developer could integrate in your customized workflows to design and execute validation your datasets and model.
+`gesund` is python package that enables you to connect with [Gesund.ai](https://gesund.ai/) and utilize majority of the features and capabilities that you as a developer could integrate in your customized workflows to design and execute validation your datasets and model.
 
-`gesund-val-library` is a python package that explicitly enables you to design and execute your customized machine learning validation workflows with our validation tools.
+`gesund` is a python package that explicitly enables you to design and execute your customized machine learning validation workflows with our validation tools.
 It is a set of tools that allow developers and researchers to measure the performance of AI models using specific evaluation metrics. In healthcare, these libraries are essential for determining whether AI models can safely and accurately function in real-world clinical environments. Validation libraries ensure models are not only statistically sound but also clinically relevant, addressing key considerations like patient fairness, accuracy across different demographics, and performance in handling different medical conditions.
 
-This user guide provides a comprehensive overview of `gesundai-val-library`, including installation instructions, basic usage examples, advanced features, and customization options. Whether you're a beginner or an experienced developer, this guide will help you get started and make the most of our package.
+This user guide provides a comprehensive overview of `gesund`, including installation instructions, basic usage examples, advanced features, and customization options. Whether you're a beginner or an experienced developer, this guide will help you get started and make the most of our package.
 
 
 
@@ -38,15 +38,14 @@ Installation could be done either using one of the following
 1. Pip
 
 ```
-pip install --upgrade gesund-val-library
+pip install --upgrade gesund
 ```
 
 2. Github
 
 ```
-git clone https://github.com/gesund-ai/gesund_val_library.git
-cd gesund_val_library
-python -m setup.py
+git clone https://github.com/gesund-ai/gesund.git
+cd gesund
 ```
 
 
@@ -58,7 +57,7 @@ python -m setup.py
 
 ```
 # import the required libraries
-from gesund_val_library.validation import run_metrics
+from gesund.validation import run_metrics
 import pprint
 
 # provide the json files for respective values
@@ -99,7 +98,7 @@ Inorder to the run classification specific validation metrics, set `problem_type
 
 ```
 # import the required libraries
-from gesund_val_library.validation import run_metrics
+from gesund.validation import run_metrics
 import pprint
 
 # provide the json files for respective values
@@ -129,7 +128,7 @@ Inorder to the run segmentation specific validation metrics, set `problem_type: 
 
 ```
 # import the required libraries
-from gesund_val_library.validation import run_metrics
+from gesund.validation import run_metrics
 import pprint
 
 # provide the json files for respective values
@@ -156,7 +155,7 @@ Inorder to the run object detection specific validation metrics, set `problem_ty
 
 ```
 # import the required libraries
-from gesund_val_library.validation import run_metrics
+from gesund.validation import run_metrics
 import pprint
 
 # provide the json files for respective values

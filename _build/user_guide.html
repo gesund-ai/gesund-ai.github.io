@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" data-content_root="./">
+<html class="writer-html5" lang="en">
 <head>
   <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
@@ -13,9 +13,9 @@
   
       <script src="_static/jquery.js?v=5d32c60e"></script>
       <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-      <script src="_static/documentation_options.js?v=2709fde1"></script>
-      <script src="_static/doctools.js?v=9bcbadda"></script>
-      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js?v=e031e9a9"></script>
+      <script src="_static/doctools.js?v=888ff710"></script>
+      <script src="_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -87,13 +87,13 @@
            <div itemprop="articleBody">
              
   <section id="user-guide">
-<h1>User Guide<a class="headerlink" href="#user-guide" title="Link to this heading"></a></h1>
-<p><code class="docutils literal notranslate"><span class="pre">gesundai-sdk</span></code> is python package that enables you to connect with <a class="reference external" href="https://gesund.ai/">Gesund.ai</a> and utilize majority of the features and capabilities that you as a developer could integrate in your customized workflows to design and execute validation your datasets and model.</p>
-<p><code class="docutils literal notranslate"><span class="pre">gesund-val-library</span></code> is a python package that explicitly enables you to design and execute your customized machine learning validation workflows with our validation tools.
+<h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading"></a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">gesund</span></code> is python package that enables you to connect with <a class="reference external" href="https://gesund.ai/">Gesund.ai</a> and utilize majority of the features and capabilities that you as a developer could integrate in your customized workflows to design and execute validation your datasets and model.</p>
+<p><code class="docutils literal notranslate"><span class="pre">gesund</span></code> is a python package that explicitly enables you to design and execute your customized machine learning validation workflows with our validation tools.
 It is a set of tools that allow developers and researchers to measure the performance of AI models using specific evaluation metrics. In healthcare, these libraries are essential for determining whether AI models can safely and accurately function in real-world clinical environments. Validation libraries ensure models are not only statistically sound but also clinically relevant, addressing key considerations like patient fairness, accuracy across different demographics, and performance in handling different medical conditions.</p>
-<p>This user guide provides a comprehensive overview of <code class="docutils literal notranslate"><span class="pre">gesundai-val-library</span></code>, including installation instructions, basic usage examples, advanced features, and customization options. Whether you’re a beginner or an experienced developer, this guide will help you get started and make the most of our package.</p>
+<p>This user guide provides a comprehensive overview of <code class="docutils literal notranslate"><span class="pre">gesund</span></code>, including installation instructions, basic usage examples, advanced features, and customization options. Whether you’re a beginner or an experienced developer, this guide will help you get started and make the most of our package.</p>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
 <p><strong>A. Create virtual environment</strong></p>
 <ol class="arabic simple">
 <li><p>Create a virtual environment using any of the following choices</p></li>
@@ -116,24 +116,23 @@ It is a set of tools that allow developers and researchers to measure the perfor
 <ol class="arabic simple">
 <li><p>Pip</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">gesund</span><span class="o">-</span><span class="n">val</span><span class="o">-</span><span class="n">library</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">gesund</span>
 </pre></div>
 </div>
 <ol class="arabic simple" start="2">
 <li><p>Github</p></li>
 </ol>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gesund</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">gesund_val_library</span><span class="o">.</span><span class="n">git</span>
-<span class="n">cd</span> <span class="n">gesund_val_library</span>
-<span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">setup</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">gesund</span><span class="o">-</span><span class="n">ai</span><span class="o">/</span><span class="n">gesund</span><span class="o">.</span><span class="n">git</span>
+<span class="n">cd</span> <span class="n">gesund</span>
 </pre></div>
 </div>
 </section>
 <section id="getting-started">
-<h2>Getting-Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<h2>Getting-Started<a class="headerlink" href="#getting-started" title="Permalink to this heading"></a></h2>
 <section id="basic-usage">
-<h3>Basic usage<a class="headerlink" href="#basic-usage" title="Link to this heading"></a></h3>
+<h3>Basic usage<a class="headerlink" href="#basic-usage" title="Permalink to this heading"></a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the required libraries</span>
-<span class="kn">from</span> <span class="nn">gesund_val_library.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
+<span class="kn">from</span> <span class="nn">gesund.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 
 <span class="c1"># provide the json files for respective values</span>
@@ -165,13 +164,13 @@ Under the hood, other formats are converted to <code class="docutils literal not
 </section>
 </section>
 <section id="examples">
-<h2>Examples<a class="headerlink" href="#examples" title="Link to this heading"></a></h2>
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading"></a></h2>
 <section id="run-validation">
-<h3>Run Validation<a class="headerlink" href="#run-validation" title="Link to this heading"></a></h3>
+<h3>Run Validation<a class="headerlink" href="#run-validation" title="Permalink to this heading"></a></h3>
 <p><strong>1. Classification</strong></p>
 <p>Inorder to the run classification specific validation metrics, set <code class="docutils literal notranslate"><span class="pre">problem_type:</span> <span class="pre">classification</span></code> in the args dictionary and provide the respective path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the required libraries</span>
-<span class="kn">from</span> <span class="nn">gesund_val_library.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
+<span class="kn">from</span> <span class="nn">gesund.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 
 <span class="c1"># provide the json files for respective values</span>
@@ -195,7 +194,7 @@ Under the hood, other formats are converted to <code class="docutils literal not
 <p><strong>2. Segmentation</strong></p>
 <p>Inorder to the run segmentation specific validation metrics, set <code class="docutils literal notranslate"><span class="pre">problem_type:</span> <span class="pre">segmentation</span></code> in the args dictionary and provide the respective path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the required libraries</span>
-<span class="kn">from</span> <span class="nn">gesund_val_library.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
+<span class="kn">from</span> <span class="nn">gesund.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 
 <span class="c1"># provide the json files for respective values</span>
@@ -219,7 +218,7 @@ Under the hood, other formats are converted to <code class="docutils literal not
 <p><strong>3. Object Detection</strong></p>
 <p>Inorder to the run object detection specific validation metrics, set <code class="docutils literal notranslate"><span class="pre">problem_type:</span> <span class="pre">object_detection</span></code> in the args dictionary and provide the respective path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the required libraries</span>
-<span class="kn">from</span> <span class="nn">gesund_val_library.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
+<span class="kn">from</span> <span class="nn">gesund.validation</span> <span class="kn">import</span> <span class="n">run_metrics</span>
 <span class="kn">import</span> <span class="nn">pprint</span>
 
 <span class="c1"># provide the json files for respective values</span>
@@ -242,7 +241,7 @@ Under the hood, other formats are converted to <code class="docutils literal not
 </div>
 </section>
 <section id="sub-cohort-analysis">
-<h3>Sub Cohort Analysis<a class="headerlink" href="#sub-cohort-analysis" title="Link to this heading"></a></h3>
+<h3>Sub Cohort Analysis<a class="headerlink" href="#sub-cohort-analysis" title="Permalink to this heading"></a></h3>
 <p><em>TBA</em></p>
 </section>
 </section>
