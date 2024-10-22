@@ -49,6 +49,57 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#gesund.validation.plotting_metrics"><code class="docutils literal notranslate"><span class="pre">plotting_metrics()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gesund.validation.run_metrics"><code class="docutils literal notranslate"><span class="pre">run_metrics()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.run_validation.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.run_meta_validation.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.problem_type_factory.get_validation_creation"><code class="docutils literal notranslate"><span class="pre">get_validation_creation()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter"><code class="docutils literal notranslate"><span class="pre">COCOConverter</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_annot_if_needed"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_annot_if_needed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_annotations"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_classification_annotations"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_classification_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_classification_predictions"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_classification_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_instance_segmentation_annotations"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_instance_segmentation_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_instance_segmentation_predictions"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_instance_segmentation_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_object_detection_annotations"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_object_detection_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_object_detection_predictions"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_object_detection_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_pred_if_needed"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_pred_if_needed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_predictions"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_semantic_segmentation_annotations"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_semantic_segmentation_annotations()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.convert_semantic_segmentation_predictions"><code class="docutils literal notranslate"><span class="pre">COCOConverter.convert_semantic_segmentation_predictions()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.is_annot_coco_format"><code class="docutils literal notranslate"><span class="pre">COCOConverter.is_annot_coco_format()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.coco_converter.COCOConverter.is_pred_coco_format"><code class="docutils literal notranslate"><span class="pre">COCOConverter.is_pred_coco_format()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.io_utils.format_metrics"><code class="docutils literal notranslate"><span class="pre">format_metrics()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.io_utils.read_json"><code class="docutils literal notranslate"><span class="pre">read_json()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.io_utils.save_plot_metrics_as_json"><code class="docutils literal notranslate"><span class="pre">save_plot_metrics_as_json()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.validation_data_utils.Statistics"><code class="docutils literal notranslate"><span class="pre">Statistics</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.Statistics.calculate_confidence_interval"><code class="docutils literal notranslate"><span class="pre">Statistics.calculate_confidence_interval()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.Statistics.calculate_histogram"><code class="docutils literal notranslate"><span class="pre">Statistics.calculate_histogram()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils"><code class="docutils literal notranslate"><span class="pre">ValidationUtils</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.calculate_iou"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.calculate_iou()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.filter_attribute"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.filter_attribute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.filter_attribute_by_dict"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.filter_attribute_by_dict()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.filter_validation_collection_by_meta"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.filter_validation_collection_by_meta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.is_list_numeric"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.is_list_numeric()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.is_meta_in_range"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.is_meta_in_range()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.mask_to_rle"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.mask_to_rle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.multifilter_attribute"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.multifilter_attribute()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.polygon_to_mask"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.polygon_to_mask()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.polygon_to_rle"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.polygon_to_rle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.validation_data_utils.ValidationUtils.rle_to_mask"><code class="docutils literal notranslate"><span class="pre">ValidationUtils.rle_to_mask()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.yolo_converter.ClassificationConverter"><code class="docutils literal notranslate"><span class="pre">ClassificationConverter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.yolo_converter.InstanceSegmentationConverter"><code class="docutils literal notranslate"><span class="pre">InstanceSegmentationConverter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.yolo_converter.ObjectDetectionConverter"><code class="docutils literal notranslate"><span class="pre">ObjectDetectionConverter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.yolo_converter.SemanticSegmentationConverter"><code class="docutils literal notranslate"><span class="pre">SemanticSegmentationConverter</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.yolo_converter.YoloToGesund"><code class="docutils literal notranslate"><span class="pre">YoloToGesund</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#gesund.utils.yolo_converter.YoloToGesund.run"><code class="docutils literal notranslate"><span class="pre">YoloToGesund.run()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#gesund.utils.yolo_converter.mask_to_rle"><code class="docutils literal notranslate"><span class="pre">mask_to_rle()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -139,6 +190,640 @@ saved as JSON files if specified in the arguments.</p>
 - ‘output_dir’ (str): Directory where output files are saved.</p>
 </dd>
 </dl>
+</dd></dl>
+
+<span class="target" id="module-gesund.run_validation"></span><dl class="py function">
+<dt class="sig sig-object py" id="gesund.run_validation.main">
+<span class="sig-prename descclassname"><span class="pre">gesund.run_validation.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.run_validation.main" title="Permalink to this definition"></a></dt>
+<dd><p>Main function to run validation metrics.</p>
+<p>This function sets up the command line argument parser, collects the required 
+parameters for validation, and invokes the run_metrics function from the 
+gesund to perform validation on the predictions against the 
+annotations.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>SystemExit</strong> – If the required arguments are not provided or if an error occurs 
+during argument parsing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-gesund.run_meta_validation"></span><dl class="py function">
+<dt class="sig sig-object py" id="gesund.run_meta_validation.main">
+<span class="sig-prename descclassname"><span class="pre">gesund.run_meta_validation.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.run_meta_validation.main" title="Permalink to this definition"></a></dt>
+<dd><p>Main function to plot validation metrics with optional filtering.</p>
+<p>This function sets up the command line argument parser, collects the required 
+parameters for validation, and invokes the run_metrics function to compute 
+metrics. It also plots the metrics using the plotting_metrics function, 
+with an option to filter based on metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>SystemExit</strong> – If the required arguments are not provided or if an error occurs 
+during argument parsing.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-gesund.problem_type_factory"></span><dl class="py function">
+<dt class="sig sig-object py" id="gesund.problem_type_factory.get_validation_creation">
+<span class="sig-prename descclassname"><span class="pre">gesund.problem_type_factory.</span></span><span class="sig-name descname"><span class="pre">get_validation_creation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem_type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.problem_type_factory.get_validation_creation" title="Permalink to this definition"></a></dt>
+<dd><p>Retrieve the appropriate validation creation class based on the given problem type.</p>
+<p>This function returns a specific <cite>ValidationCreation</cite> class depending on the type of problem 
+(e.g., classification, semantic segmentation, or object detection). The returned class is used 
+to create validation logic for that particular problem type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>problem_type</strong> (<em>str</em>) – The type of machine learning problem. Must be one of the following:
+- ‘classification’: For classification tasks.
+- ‘semantic_segmentation’: For semantic segmentation tasks.
+- ‘object_detection’: For object detection tasks.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ValueError</strong> – If the <cite>problem_type</cite> is unknown or not supported.</p>
+</dd>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>A <cite>ValidationCreation</cite> class specific to the given problem type.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>type</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-gesund.utils.coco_converter"></span><dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.coco_converter.</span></span><span class="sig-name descname"><span class="pre">COCOConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem_type</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">successful_batch_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter" title="Permalink to this definition"></a></dt>
+<dd><p>A class to convert annotations and predictions between COCO format and custom format
+for various problem types such as classification, object detection, and segmentation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem_type</strong> (<em>str</em>) – The type of problem being addressed, e.g., ‘classification’, 
+‘semantic_segmentation’, ‘object_detection’, ‘instance_segmentation’.</p></li>
+<li><p><strong>annotations</strong> (<em>dict</em><em>, </em><em>optional</em>) – Annotations data in COCO format (optional).</p></li>
+<li><p><strong>successful_batch_data</strong> (<em>list</em><em>, </em><em>optional</em>) – Batch data containing successful predictions in COCO format (optional).</p></li>
+</ul>
+</dd>
+</dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_annot_if_needed">
+<span class="sig-name descname"><span class="pre">convert_annot_if_needed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_annot_if_needed" title="Permalink to this definition"></a></dt>
+<dd><p>Convert annotations to custom format if they are in COCO format. 
+If they are already in custom format, no conversion is performed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotations in custom format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_annotations">
+<span class="sig-name descname"><span class="pre">convert_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_annotations" title="Permalink to this definition"></a></dt>
+<dd><p>Convert annotations to the custom format based on the problem type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotations in the custom format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the problem type is unsupported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_classification_annotations">
+<span class="sig-name descname"><span class="pre">convert_classification_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_classification_annotations" title="Permalink to this definition"></a></dt>
+<dd><p>Convert classification annotations from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotations in custom classification format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_classification_predictions">
+<span class="sig-name descname"><span class="pre">convert_classification_predictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_classification_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Convert classification predictions from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Predictions in custom classification format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_instance_segmentation_annotations">
+<span class="sig-name descname"><span class="pre">convert_instance_segmentation_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_instance_segmentation_annotations" title="Permalink to this definition"></a></dt>
+<dd><p>Convert instance segmentation annotations from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotations in custom instance segmentation format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_instance_segmentation_predictions">
+<span class="sig-name descname"><span class="pre">convert_instance_segmentation_predictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_instance_segmentation_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Convert instance segmentation predictions from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Predictions in custom instance segmentation format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_object_detection_annotations">
+<span class="sig-name descname"><span class="pre">convert_object_detection_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_object_detection_annotations" title="Permalink to this definition"></a></dt>
+<dd><p>Convert object detection annotations from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotations in custom object detection format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_object_detection_predictions">
+<span class="sig-name descname"><span class="pre">convert_object_detection_predictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_object_detection_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Convert object detection predictions from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Predictions in custom object detection format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_pred_if_needed">
+<span class="sig-name descname"><span class="pre">convert_pred_if_needed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_pred_if_needed" title="Permalink to this definition"></a></dt>
+<dd><p>Convert predictions to custom format if they are in COCO format. 
+If they are already in custom format, no conversion is performed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Predictions in custom format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_predictions">
+<span class="sig-name descname"><span class="pre">convert_predictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Convert predictions to the custom format based on the problem type.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Predictions in the custom format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the problem type is unsupported.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_semantic_segmentation_annotations">
+<span class="sig-name descname"><span class="pre">convert_semantic_segmentation_annotations</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_semantic_segmentation_annotations" title="Permalink to this definition"></a></dt>
+<dd><p>Convert semantic segmentation annotations from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Annotations in custom semantic segmentation format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.convert_semantic_segmentation_predictions">
+<span class="sig-name descname"><span class="pre">convert_semantic_segmentation_predictions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.convert_semantic_segmentation_predictions" title="Permalink to this definition"></a></dt>
+<dd><p>Convert semantic segmentation predictions from COCO format to custom format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>Predictions in custom semantic segmentation format.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.is_annot_coco_format">
+<span class="sig-name descname"><span class="pre">is_annot_coco_format</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.is_annot_coco_format" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the annotations are in COCO format. COCO format includes keys like
+‘images’, ‘annotations’, and ‘categories’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the annotations follow the COCO format, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.coco_converter.COCOConverter.is_pred_coco_format">
+<span class="sig-name descname"><span class="pre">is_pred_coco_format</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.coco_converter.COCOConverter.is_pred_coco_format" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the predictions are in COCO format. COCO predictions typically contain 
+‘image_id’, ‘category_id’, and ‘score’. The ‘loss’ key is optional.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>True if the predictions follow the COCO format, False otherwise.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-gesund.utils.io_utils"></span><dl class="py function">
+<dt class="sig sig-object py" id="gesund.utils.io_utils.format_metrics">
+<span class="sig-prename descclassname"><span class="pre">gesund.utils.io_utils.</span></span><span class="sig-name descname"><span class="pre">format_metrics</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metrics</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.io_utils.format_metrics" title="Permalink to this definition"></a></dt>
+<dd><p>Format and print the overall metrics in a readable format.</p>
+<p>This function takes in the metrics data, formats it, and prints out the 
+highlighted overall metrics, including confidence intervals when applicable.
+It also prints a message indicating that all graphs and plot metrics have been saved.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>metrics</strong> – (dict) A dictionary containing the metrics, expected to have 
+a ‘plot_highlighted_overall_metrics’ key with the metrics data.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gesund.utils.io_utils.read_json">
+<span class="sig-prename descclassname"><span class="pre">gesund.utils.io_utils.</span></span><span class="sig-name descname"><span class="pre">read_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.io_utils.read_json" title="Permalink to this definition"></a></dt>
+<dd><p>Read a JSON file and return its contents as a Python dictionary.</p>
+<p>This function opens the specified file, reads the JSON content, and 
+returns it as a Python dictionary. The file should contain valid JSON data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>file_path</strong> – (str) The path to the JSON file to read.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(dict) The JSON data loaded into a Python dictionary.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>FileNotFoundError</strong> – If the specified file does not exist.</p></li>
+<li><p><strong>json.JSONDecodeError</strong> – If the file contains invalid JSON data.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gesund.utils.io_utils.save_plot_metrics_as_json">
+<span class="sig-prename descclassname"><span class="pre">gesund.utils.io_utils.</span></span><span class="sig-name descname"><span class="pre">save_plot_metrics_as_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">overall_metrics</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output_dir</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.io_utils.save_plot_metrics_as_json" title="Permalink to this definition"></a></dt>
+<dd><p>Save each plot’s metrics as individual JSON files in the specified directory.</p>
+<p>This function iterates over the overall metrics dictionary and saves 
+each plot’s metrics in separate JSON files, named according to the plot names.
+If the directory does not exist, it will be created.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>overall_metrics</strong> – (dict) A dictionary containing the metrics for multiple plots.</p></li>
+<li><p><strong>output_dir</strong> – (str) Path to the directory where the JSON files should be saved.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>OSError</strong> – If the directory cannot be created or if the files cannot be written.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<span class="target" id="module-gesund.utils.validation_data_utils"></span><dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.Statistics">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.validation_data_utils.</span></span><span class="sig-name descname"><span class="pre">Statistics</span></span><a class="headerlink" href="#gesund.utils.validation_data_utils.Statistics" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.Statistics.calculate_confidence_interval">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_confidence_interval</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">metric</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">len_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.96</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.Statistics.calculate_confidence_interval" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the confidence interval for a given metric.</p>
+<p>This function computes the confidence interval for a given metric based 
+on the provided sample size and z-score. The confidence interval is 
+calculated using the formula: CI = metric ± z * sqrt((metric * (1 - metric)) / <a href="#id1"><span class="problematic" id="id2">len_</span></a>).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>metric</strong> – (float) The observed metric for which to calculate the confidence interval.</p></li>
+<li><p><strong>len</strong> – (int) The sample size used to estimate the confidence interval.</p></li>
+<li><p><strong>z_value</strong> – (float, optional) The z-score corresponding to the desired confidence level, 
+default is 1.96 (for 95% confidence level).</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(tuple) A tuple containing the lower and upper bounds of the confidence interval.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the sample size is less than or equal to zero.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.Statistics.calculate_histogram">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_histogram</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">min_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n_bins</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.Statistics.calculate_histogram" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate a histogram for a given array.</p>
+<p>This function computes a histogram for the specified array, creating bins 
+based on the provided minimum and maximum values. The histogram is returned 
+as a list of dictionaries with bin categories and counts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>array</strong> – (list or np.ndarray) The array of values for which to calculate the histogram.</p></li>
+<li><p><strong>min</strong> – (float) The minimum value for the histogram bins.</p></li>
+<li><p><strong>max</strong> – (float) The maximum value for the histogram bins.</p></li>
+<li><p><strong>n_bins</strong> – (int) The number of bins to create in the histogram.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(list) A list of dictionaries where each dictionary contains a category 
+and the corresponding value count for that bin.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If n_bins is less than or equal to zero.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.validation_data_utils.</span></span><span class="sig-name descname"><span class="pre">ValidationUtils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_pred_true</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.calculate_iou">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">calculate_iou</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">gt_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pred_mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">threshold</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.5</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.calculate_iou" title="Permalink to this definition"></a></dt>
+<dd><p>Calculate the Intersection over Union (IoU) between two masks.</p>
+<p>This function computes the IoU score, which is a measure of overlap 
+between two masks. The IoU is calculated as the area of intersection 
+divided by the area of union.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>gt_mask</strong> – (list) A list of points representing the ground truth mask vertices 
+in the format [[x1, y1], [x2, y2], …].</p></li>
+<li><p><strong>pred_mask</strong> – (list) A list of points representing the predicted mask vertices 
+in the format [[x1, y1], [x2, y2], …].</p></li>
+<li><p><strong>threshold</strong> – (float, optional) The threshold value for IoU, default is 0.5.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(float) The IoU score in the range [0, 1]. A score of 0 indicates no overlap, 
+while a score of 1 indicates perfect overlap.</p>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>ValueError</strong> – If the input masks are invalid or not in the expected format.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.filter_attribute">
+<span class="sig-name descname"><span class="pre">filter_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_attribute_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.filter_attribute" title="Permalink to this definition"></a></dt>
+<dd><p>Filters data by a single attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_attribute_dict</strong> – (dict) A dictionary where the key is the attribute name 
+and the value is the desired filter criteria.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(pd.DataFrame) A DataFrame containing the filtered metadata based on the specified attribute.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.filter_attribute_by_dict">
+<span class="sig-name descname"><span class="pre">filter_attribute_by_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_attribute_dict</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.filter_attribute_by_dict" title="Permalink to this definition"></a></dt>
+<dd><p>Filters data by more than one attribute.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_attribute_dict</strong> – (dict, optional) A dictionary where keys are attribute names 
+and values are the desired filter criteria.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(pd.DataFrame) A DataFrame containing the filtered metadata based on the specified attributes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.filter_validation_collection_by_meta">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">filter_validation_collection_by_meta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">validation_collection_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.filter_validation_collection_by_meta" title="Permalink to this definition"></a></dt>
+<dd><p>Filters validation collection data based on specified metadata.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>validation_collection_data</strong> – (list) A list of validation data documents.</p></li>
+<li><p><strong>meta_filter</strong> – (dict) A dictionary of metadata filters.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(list) A list of filtered validation collection data documents.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.is_list_numeric">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_list_numeric</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.is_list_numeric" title="Permalink to this definition"></a></dt>
+<dd><p>Checks if all elements in the list are numeric.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>x_list</strong> – (list) A list of elements to check.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(bool) True if all elements are numeric, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.is_meta_in_range">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">is_meta_in_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">meta_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meta_filter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.is_meta_in_range" title="Permalink to this definition"></a></dt>
+<dd><p>Determines if the metadata values fall within the specified filter ranges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>meta_data</strong> – (dict) A dictionary containing metadata.</p></li>
+<li><p><strong>meta_filter</strong> – (dict) A dictionary containing filter criteria.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(bool) True if metadata values are within specified ranges, False otherwise.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.mask_to_rle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mask_to_rle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">image</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.mask_to_rle" title="Permalink to this definition"></a></dt>
+<dd><p>Converts a binary mask to run-length encoded format.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>image</strong> – (np.ndarray) A binary mask as a numpy array (1 - mask, 0 - background).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(tuple) A tuple containing the run-length encoded string and the image shape.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.multifilter_attribute">
+<span class="sig-name descname"><span class="pre">multifilter_attribute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_attributes_dict</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.multifilter_attribute" title="Permalink to this definition"></a></dt>
+<dd><p>Filters data by multiple attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>target_attributes_dict</strong> – (dict) A dictionary where keys are attribute names 
+and values are the desired filter criteria.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(pd.DataFrame) A DataFrame containing the filtered metadata based on the specified attributes.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.polygon_to_mask">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">polygon_to_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poly</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_value</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.polygon_to_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Converts a polygon defined by a list of points into a binary mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>poly</strong> – (list) A list of points defining the polygon.</p></li>
+<li><p><strong>shape</strong> – (tuple) The shape of the output mask (height, width).</p></li>
+<li><p><strong>max_value</strong> – (int, optional) The value to fill inside the polygon. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.ndarray) A binary mask with the polygon filled in.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.polygon_to_rle">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">polygon_to_rle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">polygon</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.polygon_to_rle" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.validation_data_utils.ValidationUtils.rle_to_mask">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rle_to_mask</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_rle</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shape</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.validation_data_utils.ValidationUtils.rle_to_mask" title="Permalink to this definition"></a></dt>
+<dd><p>Converts run-length encoded mask to a binary mask.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>mask_rle</strong> – (str) Run-length encoded mask as a string (start length).</p></li>
+<li><p><strong>shape</strong> – (tuple) The shape (height, width) of the output mask.</p></li>
+<li><p><strong>label</strong> – (int, optional) The label to assign to the mask pixels. Default is 1.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>(np.ndarray) A binary mask as a numpy array (1 - mask, 0 - background).</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<span class="target" id="module-gesund.utils.yolo_converter"></span><dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.ClassificationConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.yolo_converter.</span></span><span class="sig-name descname"><span class="pre">ClassificationConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.yolo_converter.ClassificationConverter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.InstanceSegmentationConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.yolo_converter.</span></span><span class="sig-name descname"><span class="pre">InstanceSegmentationConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.yolo_converter.InstanceSegmentationConverter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.ObjectDetectionConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.yolo_converter.</span></span><span class="sig-name descname"><span class="pre">ObjectDetectionConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.yolo_converter.ObjectDetectionConverter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.SemanticSegmentationConverter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.yolo_converter.</span></span><span class="sig-name descname"><span class="pre">SemanticSegmentationConverter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.yolo_converter.SemanticSegmentationConverter" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.YoloToGesund">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">gesund.utils.yolo_converter.</span></span><span class="sig-name descname"><span class="pre">YoloToGesund</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">annotations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predictions</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_width</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">image_height</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">512</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#gesund.utils.yolo_converter.YoloToGesund" title="Permalink to this definition"></a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.YoloToGesund.run">
+<span class="sig-name descname"><span class="pre">run</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">problem_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'object_detection'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">input_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'prediction'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Dict</span></span></span><a class="headerlink" href="#gesund.utils.yolo_converter.YoloToGesund.run" title="Permalink to this definition"></a></dt>
+<dd><p>A run method to execute the pipeline and convert the jsons</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>problem_type</strong> – str: object detection</p></li>
+<li><p><strong>input_type</strong> – str: to indicate if the input is prediction or annotation</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary of converted format</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="gesund.utils.yolo_converter.mask_to_rle">
+<span class="sig-prename descclassname"><span class="pre">gesund.utils.yolo_converter.</span></span><span class="sig-name descname"><span class="pre">mask_to_rle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ndarray</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">List</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#gesund.utils.yolo_converter.mask_to_rle" title="Permalink to this definition"></a></dt>
+<dd><p>Convert a 2D binary mask to RLE format.</p>
 </dd></dl>
 
 </section>
