@@ -26,6 +26,7 @@ The model insights are exported into a report for the model owner to supplement 
    validation_metrics.md
    platform_integrations.md
    api.md
+   changelog.md
 
 Apache 2.0 License
 --------------------

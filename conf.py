@@ -19,7 +19,11 @@ import sys
 print(sys.path)
 sys.path.insert(0, os.path.abspath("./code"))
 
-extensions = ['myst_parser', 'sphinx.ext.autodoc', 'sphinx.ext.duration', 'sphinx.ext.autosummary']
+version = '0.3.17'  # Current version of your project
+release = '1.0.0'  # Full release version, including alpha/beta/rc tags
+
+
+extensions = ['myst_parser', 'sphinx.ext.autodoc', 'sphinx.ext.duration', 'sphinx.ext.autosummary', "sphinx_changelog", "sphinxcontrib.versioning"]
 
 templates_path = ['_templates']
 exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
