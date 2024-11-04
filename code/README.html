@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Validation Metrics Library &mdash; Gesundai 1.0.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=af2ce170"></script>
+      <script src="../_static/doctools.js?v=888ff710"></script>
+      <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Gesundai
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user_guide.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../validation_metrics.html">Validation Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../platform_integrations.html">Platform Integrations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Change log</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html#features">Features</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Gesundai</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Validation Metrics Library</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/code/README.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="validation-metrics-library">
+<h1>Validation Metrics Library<a class="headerlink" href="#validation-metrics-library" title="Permalink to this heading"></a></h1>
+<section id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading"></a></h2>
+<p>This library provides tools for calculating validation metrics for predictions and annotations in machine learning workflows. It includes a command-line tool for computing and displaying validation metrics.</p>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading"></a></h2>
+<p>To use this library, ensure you have the necessary dependencies installed in your environment. You can install them via <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>.
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading"></a></h2>
+<section id="command-line-tool">
+<h3>Command-Line Tool<a class="headerlink" href="#command-line-tool" title="Permalink to this heading"></a></h3>
+<p>The primary script for running validation metrics is <code class="docutils literal notranslate"><span class="pre">run_metrics.py</span></code>. This script calculates validation metrics based on JSON files containing predictions and annotations.</p>
+<section id="arguments">
+<h4>Arguments<a class="headerlink" href="#arguments" title="Permalink to this heading"></a></h4>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">annotations</span></code> (required): Path to the JSON file containing annotation data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">predictions</span></code> (required): Path to the JSON file containing prediction data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class_mappings</span></code> (required): Path to the JSON file containing class_mappings data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">problem_type</span></code> (required): Problem type that Validation is being run for .e.g. <code class="docutils literal notranslate"><span class="pre">classification</span></code>, <code class="docutils literal notranslate"><span class="pre">semantic_segmentation</span></code>, <code class="docutils literal notranslate"><span class="pre">instance_segmentation</span></code>, <code class="docutils literal notranslate"><span class="pre">object_detection</span></code></p></li>
+</ul>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this heading"></a></h4>
+<p><strong>Basic Usage</strong>:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>run_metrics<span class="w"> </span>--annotations<span class="w"> </span>test_data/gesund_custom_format/gesund_custom_format_annotations_classification.json<span class="w"> </span>--predictions<span class="w"> </span>test_data/gesund_custom_format/gesund_custom_format_predictions_classification.json<span class="w"> </span>--class_mappings<span class="w"> </span>test_data/test_class_mappings.json<span class="w"> </span>--problem_type<span class="w"> </span>classification<span class="w"> </span>--format<span class="w"> </span>gesund_custom_format
+</pre></div>
+</div>
+</section>
+</section>
+<section id="example-json-inputs">
+<h3>Example JSON Inputs<a class="headerlink" href="#example-json-inputs" title="Permalink to this heading"></a></h3>
+<p>The library supports annotations and predictions in the following formats:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">COCO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">YOLO</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Gesund</span> <span class="pre">Custom</span> <span class="pre">Format</span></code></p></li>
+</ul>
+<p>The format for <code class="docutils literal notranslate"><span class="pre">Gesund</span> <span class="pre">Custom</span> <span class="pre">Format</span></code> is shown below under <code class="docutils literal notranslate"><span class="pre">Example</span> <span class="pre">JSON</span> <span class="pre">Inputs</span></code>.</p>
+<ul>
+<li><p><strong>Annotations (<code class="docutils literal notranslate"><span class="pre">test_data/gesund_custom_format/gesund_custom_format_annotations_classification.json</span></code>)</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+&quot;664df1bf782d9eb107789013&quot;: {
+  &quot;image_id&quot;: &quot;664df1bf782d9eb107789013&quot;,
+  &quot;annotation&quot;: [
+    {
+      &quot;id&quot;: &quot;664dfb2085d8059c72b7b24a&quot;,
+      &quot;label&quot;: 0
+    }
+  ]
+},
+
+&quot;664df1bf782d9eb107789015&quot;: {
+  &quot;image_id&quot;: &quot;664df1bf782d9eb107789015&quot;,
+  &quot;annotation&quot;: [
+    {
+      &quot;id&quot;: &quot;664dfb2085d8059c72b7b24d&quot;,
+      &quot;label&quot;: 1
+    }
+  ]
+},
+...
+}
+</pre></div>
+</div>
+</li>
+<li><p><strong>Predictions (<code class="docutils literal notranslate"><span class="pre">test_data/gesund_custom_format/gesund_custom_format_predictions_classification.json</span></code>)</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+&quot;664df1bf782d9eb107789013&quot;: {
+  &quot;image_id&quot;: &quot;664df1bf782d9eb107789013&quot;,
+  &quot;prediction_class&quot;: 1,
+  &quot;confidence&quot;: 0.731047693767988,
+  &quot;logits&quot;: [
+    0.2689523062320121,
+    0.731047693767988
+  ],
+  &quot;loss&quot;: 16.11764907836914
+},
+
+&quot;664df1bf782d9eb107789015&quot;: {
+  &quot;image_id&quot;: &quot;664df1bf782d9eb107789015&quot;,
+  &quot;prediction_class&quot;: 1,
+  &quot;confidence&quot;: 0.7308736572776326,
+  &quot;logits&quot;: [
+    0.26912634272236735,
+    0.7308736572776326
+  ],
+  &quot;loss&quot;: 0.007578411139547825
+},
+...
+}
+</pre></div>
+</div>
+</li>
+<li><p><strong>Class Mappings (<code class="docutils literal notranslate"><span class="pre">test_data/test_class_mappings.json</span></code>)</strong>:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="nt">&quot;0&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;normal&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;1&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;pneumonia&quot;</span><span class="p">}</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</section>
+<section id="example-outputs">
+<h3>Example Outputs<a class="headerlink" href="#example-outputs" title="Permalink to this heading"></a></h3>
+<section id="console-output">
+<h4>Console Output<a class="headerlink" href="#console-output" title="Permalink to this heading"></a></h4>
+<p>Only the Highlighted Overall Metrics are printed to the console. The output on the consol should look like so:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>Validation Metrics:
+----------------------------------------
+Accuracy:
+    Validation: 0.4375
+    Confidence_Interval: 0.2656 to 0.6094
+----------------------------------------
+Micro F1:
+    Validation: 0.4375
+    Confidence_Interval: 0.2656 to 0.6094
+----------------------------------------
+Macro F1:
+    Validation: 0.4000
+    Confidence_Interval: 0.2303 to 0.5697
+----------------------------------------
+AUC:
+    Validation: 0.3996
+    Confidence_Interval: 0.2299 to 0.5693
+----------------------------------------
+Precision:
+    Validation: 0.4343
+    Confidence_Interval: 0.2625 to 0.6060
+----------------------------------------
+Sensitivity:
+    Validation: 0.4549
+    Confidence_Interval: 0.2824 to 0.6274
+----------------------------------------
+Specificity:
+    Validation: 0.4549
+    Confidence_Interval: 0.2824 to 0.6274
+----------------------------------------
+Matthews C C:
+    Validation: -0.1089
+    Confidence_Interval: 0.0010 to 0.2168
+----------------------------------------
+----------------------------------------
+All Graphs and Plots Metrics saved in JSONs.
+----------------------------------------
+</pre></div>
+</div>
+</section>
+<section id="output-json-files">
+<h4>Output JSON Files<a class="headerlink" href="#output-json-files" title="Permalink to this heading"></a></h4>
+<p>All output JSON files for all graphs and plots will be present in the <code class="docutils literal notranslate"><span class="pre">outputs</span></code> dir, under the randomly assigned <code class="docutils literal notranslate"><span class="pre">{batch_job_id}</span></code> dir.</p>
+</section>
+<section id="coco-format">
+<h4>COCO Format<a class="headerlink" href="#coco-format" title="Permalink to this heading"></a></h4>
+<p>It is to be noted that COCO format is traditionally used for object detection, instance segmentation, and keypoint detection, but it is not designed for image classification. Therefore, we have adapted COCO-like structures for classification tasks.</p>
+<p>Sample format can be seen below:</p>
+<ul class="simple">
+<li><p><strong>Annotations (<code class="docutils literal notranslate"><span class="pre">test_data/coco/coco_annotations_classification.json</span></code>)</strong>:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>{
+    &quot;info&quot;: {},
+    &quot;licenses&quot;: [],
+    &quot;categories&quot;: [
+        {
+            &quot;id&quot;: 0,
+            &quot;name&quot;: &quot;normal&quot;,
+            &quot;supercategory&quot;: &quot;medical conditions&quot;
+        },
+        {
+            &quot;id&quot;: 1,
+            &quot;name&quot;: &quot;pneumonia&quot;,
+            &quot;supercategory&quot;: &quot;medical conditions&quot;
+        }
+    ],
+    &quot;images&quot;: [
+        {
+            &quot;id&quot;: &quot;664df1bf782d9eb107789013&quot;,
+            &quot;file_name&quot;: &quot;image_1.jpg&quot;,
+            &quot;width&quot;: 240,
+            &quot;height&quot;: 240
+        },
+        {
+            &quot;id&quot;: &quot;664df1bf782d9eb107789015&quot;,
+            &quot;file_name&quot;: &quot;image_2.jpg&quot;,
+            &quot;width&quot;: 240,
+            &quot;height&quot;: 240
+        },
+        {
+            &quot;id&quot;: &quot;664df1bf782d9eb107789014&quot;,
+            &quot;file_name&quot;: &quot;image_3.jpg&quot;,
+            &quot;width&quot;: 240,
+            &quot;height&quot;: 240
+        },
+        ...
+    ],
+    &quot;annotations&quot;: [
+        {
+            &quot;id&quot;: 1,
+            &quot;image_id&quot;: &quot;664df1bf782d9eb107789013&quot;,
+            &quot;category_id&quot;: 0,
+            &quot;bbox&quot;: [],
+            &quot;area&quot;: 224,
+            &quot;iscrowd&quot;: 0
+        },
+        {
+            &quot;id&quot;: 2,
+            &quot;image_id&quot;: &quot;664df1bf782d9eb107789015&quot;,
+            &quot;category_id&quot;: 1,
+            &quot;bbox&quot;: [],
+            &quot;area&quot;: 224,
+            &quot;iscrowd&quot;: 0
+        },
+        {
+            &quot;id&quot;: 3,
+            &quot;image_id&quot;: &quot;664df1bf782d9eb107789014&quot;,
+            &quot;category_id&quot;: 1,
+            &quot;bbox&quot;: [],
+            &quot;area&quot;: 224,
+            &quot;iscrowd&quot;: 0
+        },
+        ...
+    ]
+  }
+</pre></div>
+</div>
+<ul class="simple">
+<li><p><strong>Predictions (<code class="docutils literal notranslate"><span class="pre">test_data/coco_predictions_classification.json</span></code>)</strong>:</p></li>
+</ul>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span>[
+    {
+        &quot;image_id&quot;: &quot;664df1bf782d9eb107789013&quot;,
+        &quot;category_id&quot;: 1,
+        &quot;score&quot;: 0.731047693767988,
+        &quot;loss&quot;: 16.11764907836914
+      },
+      {
+        &quot;image_id&quot;: &quot;664df1bf782d9eb107789015&quot;,
+        &quot;category_id&quot;: 1,
+        &quot;score&quot;: 0.7308736572776326,
+        &quot;loss&quot;: 0.007578411139547825
+      },
+      {
+        &quot;image_id&quot;: &quot;664df1bf782d9eb107789014&quot;,
+        &quot;category_id&quot;: 1,
+        &quot;score&quot;: 0.7310579660592649,
+        &quot;loss&quot;: 0.000025339495550724678
+      },
+      ...
+      ]
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Gesundai.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
