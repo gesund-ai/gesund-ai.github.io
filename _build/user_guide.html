@@ -143,7 +143,7 @@ It is a set of tools that allow developers and researchers to measure the perfor
     <span class="s1">&#39;predictions&#39;</span><span class="p">:</span> <span class="s1">&#39;/path/to/predictions.json&#39;</span><span class="p">,</span>
     <span class="s1">&#39;class_mappings&#39;</span><span class="p">:</span> <span class="s1">&#39;/path/to/class_mappings.json&#39;</span><span class="p">,</span>
     <span class="s1">&#39;problem_type&#39;</span><span class="p">:</span> <span class="s1">&#39;object_detection&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;json_format&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;format&#39;</span><span class="p">:</span> <span class="s1">&#39;json_format&#39;</span><span class="p">,</span> <span class="c1"># &#39;coco&#39; | &#39;yolo&#39; | &#39;gesund_custom_format&#39;</span>
     <span class="s1">&#39;write_results_to_json&#39;</span><span class="p">:</span> <span class="kc">True</span>
 <span class="p">}</span>
 
@@ -193,6 +193,7 @@ Under the hood, other formats are converted to <code class="docutils literal not
 
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">Notebook</span></code> for extensive examples in classification could be found here <a class="reference external" href="https://github.com/gesund-ai/gesund/blob/main/gesund/examples/classification_covidnet.ipynb">Classification on CovidNet</a></p>
 <p><strong>2. Segmentation</strong></p>
 <p>Inorder to the run segmentation specific validation metrics, set <code class="docutils literal notranslate"><span class="pre">problem_type:</span> <span class="pre">segmentation</span></code> in the args dictionary and provide the respective path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the required libraries</span>
@@ -217,6 +218,7 @@ Under the hood, other formats are converted to <code class="docutils literal not
 
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">Notebook</span></code> for extensive example in semantic segmentation could be found here <a class="reference external" href="https://github.com/gesund-ai/gesund/blob/main/gesund/examples/semantic_segmentation_brain_cancer.ipynb">Semantic Segmentation on Brain Cancer Dataset</a></p>
 <p><strong>3. Object Detection</strong></p>
 <p>Inorder to the run object detection specific validation metrics, set <code class="docutils literal notranslate"><span class="pre">problem_type:</span> <span class="pre">object_detection</span></code> in the args dictionary and provide the respective path.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import the required libraries</span>
@@ -241,6 +243,7 @@ Under the hood, other formats are converted to <code class="docutils literal not
 
 </pre></div>
 </div>
+<p><code class="docutils literal notranslate"><span class="pre">Notebook</span></code> for extensive example in object detection could be found here <a class="reference external" href="https://github.com/gesund-ai/gesund/blob/main/gesund/examples/object_detection_malaria.ipynb">Object Detection on Malaria Dataset</a></p>
 </section>
 <section id="sub-cohort-analysis">
 <h3>Sub Cohort Analysis<a class="headerlink" href="#sub-cohort-analysis" title="Permalink to this heading"></a></h3>

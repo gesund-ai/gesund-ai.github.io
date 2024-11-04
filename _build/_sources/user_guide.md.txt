@@ -66,7 +66,7 @@ args = {
     'predictions': '/path/to/predictions.json',
     'class_mappings': '/path/to/class_mappings.json',
     'problem_type': 'object_detection',
-    'format': 'json_format',
+    'format': 'json_format', # 'coco' | 'yolo' | 'gesund_custom_format'
     'write_results_to_json': True
 }
 
@@ -119,6 +119,7 @@ pprint.pprint(result)
 
 ```
 
+`Notebook` for extensive examples in classification could be found here [Classification on CovidNet](https://github.com/gesund-ai/gesund/blob/main/gesund/examples/classification_covidnet.ipynb)
 
 
 **2. Segmentation**
@@ -149,6 +150,9 @@ pprint.pprint(result)
 
 ```
 
+`Notebook` for extensive example in semantic segmentation could be found here [Semantic Segmentation on Brain Cancer Dataset](https://github.com/gesund-ai/gesund/blob/main/gesund/examples/semantic_segmentation_brain_cancer.ipynb)
+
+
 **3. Object Detection**
 
 Inorder to the run object detection specific validation metrics, set `problem_type: object_detection` in the args dictionary and provide the respective path.
@@ -176,6 +180,7 @@ pprint.pprint(result)
 
 ```
 
+`Notebook` for extensive example in object detection could be found here [Object Detection on Malaria Dataset](https://github.com/gesund-ai/gesund/blob/main/gesund/examples/object_detection_malaria.ipynb)
 
 ### Sub Cohort Analysis
 
